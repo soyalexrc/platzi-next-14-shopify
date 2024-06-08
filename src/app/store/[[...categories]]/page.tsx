@@ -1,16 +1,13 @@
+import { Hero } from "@/components/home/Hero"
+import { Description } from "@/components/home/Description"
+import { MainProducts } from "@/components/home/MainProducts"
 
-interface Props {
-    params: {
-        categories: string[];
-    },
-    searchParams?: string
-}
-
-export default function Page({ params: {categories}, searchParams }: Props) {
-    console.log(typeof searchParams);
+export default function Home() {
     return (
-        <div>
-            /store/{categories.map(c => `${c}, `)}
-        </div>
+        <main>
+            <Hero />
+            <Description />
+            <MainProducts />
+        </main>
     )
 }
