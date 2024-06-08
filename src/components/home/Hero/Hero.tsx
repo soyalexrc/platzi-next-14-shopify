@@ -1,6 +1,8 @@
+import stlyes from './Hero.module.sass';
+
 export const Hero = () => {
     return(
-        <section>
+        <section className={stlyes.Hero}>
             <h1>Hero</h1>
         </section>
     )
