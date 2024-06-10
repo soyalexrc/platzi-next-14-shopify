@@ -1,9 +1,13 @@
 import { MainProducts } from "@/components/home/MainProducts"
+import {ProductsWrapper} from "@/components/store/ProductsWrapper";
+import {getProducts} from "@/services/shopify";
 
-export default function Home() {
+export default async function Home() {
+    const products = await getProducts()
+
     return (
         <main>
-            <MainProducts />
+            <ProductsWrapper products={products} />
         </main>
     )
 }
