@@ -14,3 +14,17 @@ export const getProducts = async () => {
         console.log(error)
     }
 }
+
+export const getProductsByCollection = async (id: string) => {
+    try {
+        const response = await fetch(shopifyUrls.products.byCollection(id), {
+            headers: new Headers({
+                'X-Shopify-Access-Token': env.SHOPIFY_API_KEY
+            })
+        })
+        const { products } = await response.json()
+        return products
+    } catch (error) {
+        console.log(error)
+    }
+}
