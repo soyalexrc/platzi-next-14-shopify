@@ -40,3 +40,20 @@ export const getProductsByCollection = async (id: string) => {
         console.log(error)
     }
 }
+
+export const getMainProducts = async () => {
+    try {
+        const response = await fetch(shopifyUrls.products.mainProducts, {
+            headers: new Headers({
+                'X-Shopify-Access-Token': env.SHOPIFY_API_KEY
+            }),
+            next: {
+                revalidate: 60
+            }
+        })
+        const {products} = await response.json()
+        return products
+    } catch (error) {
+        console.log(error)
+    }
+}
