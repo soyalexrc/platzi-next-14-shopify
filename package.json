@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.24",
+    "ai": "^3.1.31",
     "classnames": "^2.5.1",
     "graphql": "^16.8.1",
     "graphql-request": "^7.0.1",
