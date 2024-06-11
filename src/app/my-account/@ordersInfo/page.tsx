@@ -1,5 +1,5 @@
 import { getCustomerOrders } from "@/services/shopify/graphql/customer";
-import styles from './OrderInfo.module.sass'
+import styles from './OrdersInfo.module.sass'
 
 type OrderType = {
     name: string;
