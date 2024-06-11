@@ -2,14 +2,23 @@
 
 import { useChat } from '@ai-sdk/react';
 
-export function Chat() {
+export function Chat(props: {agent: string}) {
     const { messages, input, handleInputChange, handleSubmit } = useChat({
         api: 'api/chat',
+        initialMessages: [
+            {
+                id: '1',
+                role: 'system',
+                content: props.agent
+            }
+        ]
     });
 
     return (
         <>
-            {messages.map(message => (
+            {messages
+                .filter(m => m.role !== 'system')
+                .map(message => (
                 <div key={message.id}>
                     {message.role === 'user' ? 'User: ' : 'AI: '}
                     {message.content}
